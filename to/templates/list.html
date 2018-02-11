@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block left %}
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel panel-heading">Login Here</div>
+        <div class="panel panel-body">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <div class="col-md-6">
+                <tr>
+                  <th>Notes</th>
+                  <th>Action</th>
+                </tr>
+              </div>
+            </thead>
+            <tbody>
+                {% for list in object_list %}
+              <tr>
+                  <td>{{ list.text }}</td>
+                  <td><a class="btn btn-danger" href="{% url 'to:delete' list.pk %}">Delete</a></td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel panel-heading">Note Taking App</div>
+        <div class="panel panel-body">
+          <p>This is the Note Taking App. You can create your to do list and modify it anytime you want.</p>
+          <p><b>Talent Mabuto</b></p>
+          <p>City: Chipinge</p>
+          <p>Mobile: (077) 4579 680</p>
+          <p>Talent Mabuto Copyright &copy {% now 'Y' %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

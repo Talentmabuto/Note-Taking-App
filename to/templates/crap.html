@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="panel panel-primary">
+      <div class="panel panel-heading"><h3>Create Note Here</h3></div>
+        <div class="panel panel-body">
+          {% block left %}
+          {% endblock %}
+        </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div class="panel panel-primary">
+      <div class="panel panel-heading"><h3>Your Notes List</h3></div>
+      <div class="panel panel-body">
+        {% block right %}
+        <ul>
+          {% for list in object_list %}
+            <li>{{ list.text }}</li>&nbsp; Created&nbsp; {{ list.created }}
+          {% endfor %}
+        </ul>
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block left %}
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel panel-heading">Create Note Here</div>
+        <div class="panel panel-body">
+          <form  method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <input type="submit" class="btn btn-default" value="Create Note">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel panel-heading">Note Taking App</div>
+        <div class="panel panel-body">
+          <p>This is the Note Taking App. You can create your to do list and modify it anytime you want.</p>
+          <p>Talent Mabuto Copyright &copy {% now 'Y' %}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
